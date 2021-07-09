@@ -40,7 +40,7 @@ const Cart = (props) => {
                     <Text style={styles.totalprice}>Total Price: </Text>
                     <Text style={styles.totalprice}>{pri} ৳</Text>
                 </View>
-                <TouchableOpacity style={styles.checkout}>
+                <TouchableOpacity style={styles.checkout} onPress={() => props.navigation.navigate("Checkout", pri)}>
                     <Text style={styles.checkouttext}>Check Out</Text>
                 </TouchableOpacity>
             </View>

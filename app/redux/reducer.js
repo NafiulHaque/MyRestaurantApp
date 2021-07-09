@@ -109,7 +109,7 @@ export const reducer = (state = INITIAL_STATE, action) => {
                 };
             }
             // quantity = quantity + quantity++;
-            console.log(action.payload, "action payload");
+            // console.log(action.payload, "action payload");
             return {
                 ...state,
                 // cart: state.cart.map(it => it.id === action.payload.id ? it = action.payload : it),
