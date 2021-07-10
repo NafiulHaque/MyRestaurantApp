@@ -71,6 +71,12 @@ export const reducer = (state = INITIAL_STATE, action) => {
                 cart: state.cart.filter(item => item.id !== action.payload.id)
             }
 
+        case actionTypes.CLEAR_CART:
+            return {
+                ...state,
+                cart: [],
+            }
+
         //MORE OR LESS 
 
         case actionTypes.MORE:

@@ -4,6 +4,7 @@ import { Formik } from 'formik';
 import { Component } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
+import { clearCart } from "../redux/actionCreators";
 
 const mapStateToProps = state => {
     return {
@@ -18,7 +19,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        clearCart: () => dispatch(clearCart()),
     }
 }
 
@@ -37,9 +38,9 @@ class CheckOut extends Component {
         this.setState({ checkbox: this.state.checkbox === "Cash on Delivery" ? "BCash" : "Cash on Delivery" })
     }
 
-    goBack = () => {
-        this.props.history.goBack("/");
-    }
+
+
+
 
     ModalShow = () => {
         Alert.alert(
@@ -98,6 +99,7 @@ class CheckOut extends Component {
                                         isLoading: false,
                                         isModalOpen: true,
                                     })
+                                    this.props.clearCart();
                                 } else {
                                     console.log("unsuccessfull");
                                     this.setState({
@@ -233,6 +235,7 @@ class CheckOut extends Component {
         return (
 
             <View style={styles.view}>
+
                 {form}
                 {/* {ModalShow} */}
                 {this.state.isModalOpen && !this.state.isLoading ? this.ModalShow() : null}
@@ -296,7 +299,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         borderRadius: 10,
         marginBottom: 10,
-        marginTop: 150,
+        marginTop: 130,
     },
     btntext: {
         fontWeight: "900",

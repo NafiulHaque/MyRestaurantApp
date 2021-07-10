@@ -11,6 +11,8 @@ export const SELECT_CAT = "SELECT_CAT";
 
 export const ADD_TO_CART = "ADD_TO_CART";
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const CLEAR_CART = "CLEAR_CART";
 
 export const MORE = "MORE";
 export const LESS = "LESS";
+

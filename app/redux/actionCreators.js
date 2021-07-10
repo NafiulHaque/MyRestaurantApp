@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { exp } from 'react-native-reanimated';
 import * as actionTypes from './actionTypes';
 
 
@@ -53,6 +54,15 @@ export const removeFromCart = (item) => {
         payload: item,
     }
 }
+
+export const clearCart = () => {
+    return {
+        type: actionTypes.CLEAR_CART,
+        // payload: item,
+    }
+}
+
+
 
 export const more = (sitem) => {
     return {
