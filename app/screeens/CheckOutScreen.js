@@ -44,11 +44,11 @@ class CheckOut extends Component {
     ModalShow = () => {
         Alert.alert(
             this.state.modalMsg,
-            'Maybe you are not registered or connection problem' + '!',
+            (this.state.modalMsg !== "Order Placed Successfully" ? 'Maybe you are not registered or connection problem' : 'Wait a few hours, your product will handover to you') + '!',
             [
                 {
                     text: 'Cencel',
-                    onPress: () => console.log("Cencelled"),
+                    onPress: () => (this.state.modalMsg !== "Order Placed Successfully" ? console.log("Cencelled") : this.props.navigation.navigate("Home")),
                     style: "cancel",
 
                 },
