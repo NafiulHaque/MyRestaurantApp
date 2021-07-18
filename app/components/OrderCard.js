@@ -3,50 +3,38 @@ import {
     View, StyleSheet, Image, Text, Pressable, Alert
 } from 'react-native';
 
-// import { connect } from 'react-redux';
-// import { removeFromFavourites } from '../redux/actionCreators';
-
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         // removeFromFavourites: dish => dispatch(removeFromFavourites(dish)),
-//     }
-// }
-
 const OrderCard = props => {
-    // const orde = Object.values(props.order);
-    console.log(props.order.totalPrice, "order caarddddddd");
+    // const orde = Object.values(props.order.orderTime);
+    // console.log(props.id, "order caarddddddd");
 
-    // for (var key in orde) {
-    //     // console.log(orde[key].userId, "loooooop");
-    // }
     const cartinfo = props.order.cart.map(item => {
-        console.log(item.price * item.quantity);
+
         return (
-
-            <Text key={item.id}>{item.name}</Text>
-
-
+            <Text key={item.id} style={{ width: 250, fontSize: 12, }}> #{item.name}          {item.price} x {item.quantity}</Text>
         )
     })
 
-
-
+    var datee = props.order.orderTime;
+    var date = datee.toLocaleString().slice(0, 10);
+    var time = datee.toLocaleString().slice(11, 19);
+    // var date = datee.getFullYear() + '-' + (datee.getMonth() + 1) + '-' + datee.getDate();
 
 
     return (
 
         <View style={styles.card}>
-            {/* <Image source={{ uri: props.item }}
-                    style={styles.image} /> */}
             <View style={styles.details}>
                 <View style={styles.pricerow}>
-                    {/* <Text style={styles.category}>{props.order.id}</Text> */}
-                    {/* <Text style={styles.price}>{props.order.totalPrice} Tk</Text> */}
-                </View>
-                {cartinfo}
-                <Text style={styles.title}>Total Price:{props.order.totalPrice}</Text>
-                <Text></Text>
 
+                    {cartinfo}
+                </View>
+                <View style={{ borderBottomWidth: 1, marginVertical: 7, borderColor: "grey" }}></View>
+                <Text style={styles.totalPrice}>Total Price: {props.order.totalPrice} ৳</Text>
+
+            </View>
+            <View style={{ flexDirection: "row", justifyContent: "flex-end", width: "100%", marginTop: 7 }}>
+                <Text style={{ fontSize: 10, marginRight: 5 }}>Date:{date}</Text>
+                <Text style={{ fontSize: 10, }}>Time:{time}</Text>
             </View>
         </View>
 
@@ -57,13 +45,17 @@ const OrderCard = props => {
 const styles = StyleSheet.create({
     card: {
         borderRadius: 15,
-        backgroundColor: "#f2f2f2",
-        overflow: "hidden",
+        // backgroundColor: "#f2f2f2",
+        // overflow: "hidden",
         // margin: 5,
         elevation: 5,
         width: "100%",
-        height: 100,
+        minHeight: 50,
         marginVertical: 5,
+        padding: 15,
+        textAlign: 'center',
+        justifyContent: "center",
+        alignItems: "center"
     },
     // details: {
     //     padding: 15,
@@ -88,23 +80,24 @@ const styles = StyleSheet.create({
     //     width: "45%",
 
     // },
-    // pricerow: {
-    //     flexDirection: "row",
-    //     flexWrap: "wrap",
-    //     justifyContent: "space-between",
+    pricerow: {
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "space-between",
+        width: "80%",
 
-    // },
-    // price: {
-    //     borderRadius: 12,
-    //     borderColor: "crimson",
-    //     borderWidth: 1,
-    //     color: "white",
-    //     backgroundColor: "crimson",
-    //     textAlign: "center",
-    //     width: "45%",
-    //     fontWeight: "bold",
-    //     fontSize: 15,
-    // }
+    },
+    totalPrice: {
+        // borderRadius: 12,
+        // borderColor: "crimson",
+        // borderWidth: 1,
+        // color: "white",
+        // backgroundColor: "crimson",
+        // textAlign: "center",
+        // width: "45%",
+        fontWeight: "bold",
+        // fontSize: 15,
+    }
 })
 
 export default OrderCard;

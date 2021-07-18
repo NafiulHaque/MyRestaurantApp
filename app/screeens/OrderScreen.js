@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native"
+import { View, Text, StyleSheet, FlatList, ScrollView } from "react-native"
 import { connect } from "react-redux";
 import { fetchOrders } from "../redux/actionCreators";
 import OrderCard from "../components/OrderCard";
@@ -32,6 +32,8 @@ class OrderScreen extends Component {
 
         const jon = this.props.orders;
         const orde = Object.values(jon);
+        const keyval = Object.keys(jon);
+        console.log(keyval);
 
         return (
 
@@ -46,7 +48,7 @@ class OrderScreen extends Component {
                     )}
                 /> */}
 
-                {orde.map(order => { return <OrderCard order={order} key={order.id} /> })}
+                <ScrollView>{orde.map((order, index) => { return <OrderCard order={order} key={index} /> })}</ScrollView>
             </View>
 
         )
@@ -62,7 +64,7 @@ class OrderScreen extends Component {
 const styles = StyleSheet.create({
     view: {
         flex: 1,
-        marginHorizontal: 16,
+        // marginHorizontal: 16,
     }
 })
 
