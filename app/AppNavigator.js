@@ -7,6 +7,7 @@ import Login from "./screeens/LoginScreen";
 import Logout from "./screeens/Logout";
 import CheckOut from "./screeens/CheckOutScreen";
 import Cart from "./screeens/Cart";
+import OrderScreen from "./screeens/OrderScreen";
 import DishDetailScreen from "./screeens/DishDetailScreen";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -96,7 +97,7 @@ const FavStack = () => {
         </Stack.Navigator>
     )
 }
-const CardStack = () => {
+const CartStack = () => {
     const navigation = useNavigation();
     return (
         <Stack.Navigator
@@ -156,6 +157,34 @@ const HomeStack = () => {
     )
 }
 
+const OrdersStack = () => {
+    const navigation = useNavigation();
+    return (
+        <Stack.Navigator
+            screenOptions={{
+
+                headerRight: () => (<Icon
+                    action={() => navigation.toggleDrawer()}
+                    name="ios-menu"
+                    color="black"
+                    size={24}
+                    iconStyle={{ padding: 15 }} />),
+                headerStyle: {
+                    backgroundColor: '#f53b50',
+
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                }
+            }}
+        >
+            <Stack.Screen name="Orders" component={OrderScreen} />
+
+        </Stack.Navigator>
+    )
+}
+
 class AppNavigator extends Component {
 
     componentDidMount() {
@@ -182,7 +211,8 @@ class AppNavigator extends Component {
                     <Drawer.Screen name="Home" component={HomeStack} />
                     <Drawer.Screen name="Menu" component={MenuStack} />
                     <Drawer.Screen name="Favourites" component={FavStack} />
-                    <Drawer.Screen name="Cart" component={CardStack} />
+                    <Drawer.Screen name="Cart" component={CartStack} />
+                    <Drawer.Screen name="Orders" component={OrdersStack} />
                     <Drawer.Screen name="Logout" component={Logout} />
                 </Drawer.Navigator>
 

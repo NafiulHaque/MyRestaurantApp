@@ -19,6 +19,20 @@ export const getDishes = () => dispatch => {
         .catch(err => console.log(err))
 }
 
+export const loadOrders = order => {
+    return {
+        type: actionTypes.LOAD_ORDERS,
+        payload: order,
+    }
+}
+
+export const fetchOrders = (token, userId) => dispatch => {
+    const queryParams = '&orderBy="userId"&equalTo="' + userId + '"';
+    axios.get("https://myapp-c3e74-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json?auth=" + token + queryParams)
+        .then(response => dispatch(loadOrders(response.data)))
+        .catch(err => console.log(err))
+}
+
 
 export const addToFavourites = dish => {
     return {

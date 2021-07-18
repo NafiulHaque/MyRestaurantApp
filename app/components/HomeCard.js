@@ -14,26 +14,7 @@ const mapDispatchToProps = dispatch => {
 
 const HomeCard = props => {
 
-    // const removeFav = () => {
-    //     Alert.alert(
-    //         'Delete Favourite?',
-    //         'Are you sure you wish to delete the favourite dish' + props.item.name + '?',
-    //         [
-    //             {
-    //                 text: 'Cencel',
-    //                 onPress: () => console.log("Cencelled"),
-    //                 style: "cancel"
 
-    //             },
-    //             {
-    //                 text: 'OK',
-    //                 onPress: () => props.removeFromFavourites(props.item),
-    //             }
-    //         ],
-    //         { cancelable: false }
-
-    //     )
-    // }
     return (
         <Pressable onPress={props.selectDish}>
             <View style={styles.card}>
@@ -45,6 +26,7 @@ const HomeCard = props => {
                         <Text style={styles.price}>{props.item.price} Tk</Text>
                     </View>
                     <Text style={styles.title}>{props.item.name}</Text>
+
 
                 </View>
             </View>

@@ -21,6 +21,7 @@ const MenuScreen = (props) => {
     useEffect(() => {
         props.getDishes();
     }, [])
+    console.log(props.dishes, "dishes........");
     return (
         <View>
             <FlatList

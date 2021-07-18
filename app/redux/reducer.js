@@ -8,6 +8,7 @@ const INITIAL_STATE = {
     userId: null,
     category: [],
     cart: [],
+    orders: [],
     // quantity: 1,
 }
 
@@ -21,6 +22,12 @@ export const reducer = (state = INITIAL_STATE, action) => {
                 ...state,
                 dishes: action.payload,
 
+            }
+
+        case actionTypes.LOAD_ORDERS:
+            return {
+                ...state,
+                orders: action.payload,
             }
         //selectFav
         case actionTypes.ADD_TO_FAVOURITES:

@@ -16,3 +16,5 @@ export const CLEAR_CART = "CLEAR_CART";
 export const MORE = "MORE";
 export const LESS = "LESS";
 
+export const LOAD_ORDERS = "LOAD_ORDERS";
+
