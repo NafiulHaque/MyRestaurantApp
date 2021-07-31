@@ -95,7 +95,7 @@ class Login extends Component {
                                     placeholder="  Password"
                                     // placeholderTextColor="red"
                                     // inlineImageLeft='search_icon'
-                                    keyboardType="numeric"
+                                    // keyboardType="numeric"
                                     blurOnSubmit={true}
                                 // caretHidden={true}
                                 />

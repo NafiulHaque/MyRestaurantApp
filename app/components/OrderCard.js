@@ -48,14 +48,16 @@ const styles = StyleSheet.create({
         // backgroundColor: "#f2f2f2",
         // overflow: "hidden",
         // margin: 5,
-        elevation: 5,
+        elevation: 2,
         width: "100%",
         minHeight: 50,
         marginVertical: 5,
         padding: 15,
         textAlign: 'center',
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        borderColor: "#f53b50",
+        borderWidth: 3,
     },
     // details: {
     //     padding: 15,

@@ -46,7 +46,7 @@ const MenuStack = () => {
                 headerRight: () => (<Icon
                     action={() => navigation.toggleDrawer()}
                     name="ios-menu"
-                    color="black"
+                    color="#fff"
                     size={24}
                     iconStyle={{ padding: 15 }} />),
                 headerStyle: {
@@ -80,7 +80,7 @@ const FavStack = () => {
                 headerRight: () => (<Icon
                     action={() => navigation.toggleDrawer()}
                     name="ios-menu"
-                    color="black"
+                    color="#fff"
                     size={24}
                     iconStyle={{ padding: 15 }} />),
                 headerStyle: {
@@ -106,7 +106,7 @@ const CartStack = () => {
                 headerRight: () => (<Icon
                     action={() => navigation.toggleDrawer()}
                     name="ios-menu"
-                    color="black"
+                    color="#fff"
                     size={24}
                     iconStyle={{ padding: 15 }} />),
                 headerStyle: {
@@ -134,7 +134,7 @@ const HomeStack = () => {
                 headerRight: () => (<Icon
                     action={() => navigation.toggleDrawer()}
                     name="ios-menu"
-                    color="black"
+                    color="#fff"
                     size={24}
                     iconStyle={{ padding: 15 }} />),
                 headerStyle: {
@@ -166,7 +166,7 @@ const OrdersStack = () => {
                 headerRight: () => (<Icon
                     action={() => navigation.toggleDrawer()}
                     name="ios-menu"
-                    color="black"
+                    color="#fff"
                     size={24}
                     iconStyle={{ padding: 15 }} />),
                 headerStyle: {

@@ -40,9 +40,12 @@ const styles = StyleSheet.create({
         backgroundColor: "#f2f2f2",
         overflow: "hidden",
         margin: 5,
-        elevation: 5,
-        width: 150,
+        elevation: 3,
+        width: 152,
+        // maxWidth: 200,
+        // minWidth: 100,
         height: 200,
+        // justifyContent: "space-between"
     },
     details: {
         padding: 15,
@@ -60,7 +63,7 @@ const styles = StyleSheet.create({
     },
     category: {
         borderRadius: 12,
-        borderColor: "crimson",
+        borderColor: "#f53b50",
         borderWidth: 1,
         color: "black",
         textAlign: "center",
@@ -75,10 +78,10 @@ const styles = StyleSheet.create({
     },
     price: {
         borderRadius: 12,
-        borderColor: "crimson",
+        borderColor: "#f53b50",
         borderWidth: 1,
         color: "white",
-        backgroundColor: "crimson",
+        backgroundColor: "#f53b50",
         textAlign: "center",
         width: "45%",
         fontWeight: "bold",

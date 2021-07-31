@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         fontWeight: '900',
     },
     checkout: {
-        backgroundColor: "crimson",
+        backgroundColor: "#f53b50",
         width: "100%",
         // fontWeight: "900",
         alignItems: "center",

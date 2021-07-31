@@ -20,6 +20,8 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.microprojects.myrestaurantap",
+      "versionCode": 42,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

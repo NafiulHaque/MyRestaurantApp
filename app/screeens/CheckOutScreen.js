@@ -4,7 +4,7 @@ import { Formik } from 'formik';
 import { Component } from "react";
 import { connect } from "react-redux";
 import axios from "axios";
-import { clearCart } from "../redux/actionCreators";
+import { clearCart, loadOrders } from "../redux/actionCreators";
 
 const mapStateToProps = state => {
     return {
@@ -20,6 +20,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         clearCart: () => dispatch(clearCart()),
+        // fetchOrders: (token, userId) => dispatch(fetchOrders(token, userId)),
     }
 }
 
@@ -100,6 +101,7 @@ class CheckOut extends Component {
                                         isModalOpen: true,
                                     })
                                     this.props.clearCart();
+                                    // this.props.fetchOrders(this.props.token, this.props.userId);
                                 } else {
                                     console.log("unsuccessfull");
                                     this.setState({
@@ -293,7 +295,7 @@ const styles = StyleSheet.create({
         // width: "80%",
     },
     button: {
-        backgroundColor: "crimson",
+        backgroundColor: "#f53b50",
         width: "100%",
         // fontWeight: "900",
         alignItems: "center",

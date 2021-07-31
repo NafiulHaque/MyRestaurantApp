@@ -83,14 +83,14 @@ class HomeScreen extends Component {
                         }}>
                             <Text style={{
                                 marginRight: 16,
-                                width: 90,
+                                width: "80%",
                                 textAlign: "center",
                                 borderWidth: 1,
-                                borderColor: "red",
+                                borderColor: "#f53b50",
                                 marginTop: 7,
                                 borderRadius: 10,
-                                backgroundColor: item == this.props.category ? "crimson" : "white",
-                                color: item == this.props.category ? "white" : "crimson",
+                                backgroundColor: item == this.props.category ? "#f53b50" : "white",
+                                color: item == this.props.category ? "white" : "#f53b50",
 
                             }}
                                 onPress={() => Selection(item)}
@@ -100,6 +100,7 @@ class HomeScreen extends Component {
                         </View>
                     )}
                 />
+
                 <FlatList
                     numColumns={2}
                     data={dishe}
@@ -110,8 +111,10 @@ class HomeScreen extends Component {
                     keyExtractor={item => item.id.toString()}
                     style={{
                         marginBottom: 40,
+
                     }}
                 />
+
                 <Text></Text>
             </View>
 
@@ -123,7 +126,9 @@ class HomeScreen extends Component {
 const styles = StyleSheet.create({
     view: {
         marginHorizontal: 16,
+        // width: "80%",
     }
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
